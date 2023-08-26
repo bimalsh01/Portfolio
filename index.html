@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sirijonga Unicode</title>
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+  <h1>Sirijonga Unicode</h1>
+  <textarea id="romanInput" placeholder="Enter Romanized text"></textarea>
+  <button onclick="convertToUnicode()">Convert</button>
+  <div id="unicodeOutput"></div>
+
+  <script>
+    function convertToUnicode() {
+      const romanInput = document.getElementById("romanInput").value;
+      const unicodeOutput = convertRomanToUnicode(romanInput);
+      document.getElementById("unicodeOutput").textContent = unicodeOutput;
+    }
+
+    function convertRomanToUnicode(romanText) {
+      const mapping = {
+        'a': '\u1912',
+        'b': '\u190D',
+        'c': '\u1900',
+        'd': '\u1914',
+        'e': '\u1913',
+        'f': '\u1920',
+        'g': '\u190F',
+        'h': '\u1908',
+        'i': '\u1905',
+        'j': '\u1918',
+        'k': '\u1910',
+        'l': '\u1921',
+        'm': '\u1911',
+        'n': '\u1917',
+        'o': '\u1915',
+        'p': '\u1907',
+        'q': '\u192A',
+        'r': '\u1906',
+        's': '\u1901',
+        't': '\u190B',
+        'u': '\u1903',
+        'v': '\u1902',
+        'w': '\u190E',
+        'x': '\u191C',
+        'y': '\u190C',
+        'z': '\u1919',
+        '1': '\u1940',
+        '2': '\u1948',
+        '3': '\u1949',
+        '4': '\u194A',
+        '5': '\u194B',
+        '6': '\u194C',
+        '7': '\u194D',
+        '8': '\u194E',
+        '9': '\u194F',
+        '0': '\u1946',
+        ';': '\u191B',
+        };
+
+      const unicodeText = [...romanText].map(char => mapping[char] || char).join('');
+      return unicodeText;
+    }
+  </script>
+</body>
+</html>
